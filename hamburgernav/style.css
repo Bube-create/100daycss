@@ -1,0 +1,162 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*, *::before, *::after {
+	box-sizing: border-box;
+  }
+  * {
+	margin: 0;
+  }
+  html, body {
+	height: 100%;
+  }
+  body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+  }
+  img, picture, video, canvas, svg {
+	display: block;
+	max-width: 100%;
+  }
+  input, button, textarea, select {
+	font: inherit;
+  }
+  p, h1, h2, h3, h4, h5, h6 {
+	overflow-wrap: break-word;
+  }
+  #root, #__next {
+	isolation: isolate;
+  }
+
+  .frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: #fff;
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.hamburger {
+  cursor: pointer;
+}
+
+.stick {
+  width: 80px;
+  height: 10px;
+  background: red;
+  display: block;
+  border-radius: 8px;
+  margin: 8px;
+}
+
+
+.hamburger.open .stick-1 {
+  animation: nav 500ms ease-in forwards;
+}
+
+.hamburger.open .stick-3 {
+  animation: nav-left 500ms ease-in forwards;
+}
+
+.hamburger.open .stick-2{
+  opacity: 0;
+}
+
+
+
+
+.hamburger.close .stick-1 {
+  animation: nav-close 500ms ease-in ;
+}
+
+.hamburger.close .stick-3 {
+  animation: nav-left-close 500ms ease-in;
+}
+
+.hamburger.close .stick-2{
+  opacity: 1;
+  transition: opacity 700ms ease-in;
+}
+
+
+@keyframes nav {
+  0%{
+    transform: translateY(0);
+
+  }
+  50%{
+    transform: translateY(16px) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(16px) rotate(36deg);
+
+  }
+}
+
+@keyframes nav-left {
+  0%{
+    transform: translateY(0);
+
+  }
+  50%{
+    transform: translateY(-21px) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(-21px) rotate(142deg);
+
+  }
+}
+
+@keyframes nav-close {
+  0% {
+    transform: translateY(16px) rotate(36deg);
+
+  }
+  50%{
+    transform: translateY(16px) rotate(0deg);
+  }
+  
+  100%{
+    transform: translateY(0);
+
+  }
+}
+
+@keyframes nav-left-close {
+  0% {
+    transform: translateY(-21px) rotate(142deg);
+
+  }
+
+  50%{
+    transform: translateY(-21px) rotate(0deg);
+  }
+  100%{
+    transform: translateY(0);
+
+  }
+  
+
+  
+}
+

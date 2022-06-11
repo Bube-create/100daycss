@@ -1,0 +1,258 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+/* https://bennettfeely.com/clippy/ */
+*, *::before, *::after {
+	box-sizing: border-box;
+  }
+  * {
+	margin: 0;
+  }
+  html, body {
+	height: 100%;
+  }
+  body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+  }
+  img, picture, video, canvas, svg {
+	display: block;
+	max-width: 100%;
+  }
+  input, button, textarea, select {
+	font: inherit;
+  }
+  p, h1, h2, h3, h4, h5, h6 {
+	overflow-wrap: break-word;
+  }
+  #root, #__next {
+	isolation: isolate;
+  }
+  
+  
+  .frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: #fff;
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  background-color: #272C34;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #7DDFFC;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  animation: disappear 6s ease-in infinite;
+}
+
+
+@keyframes disappear {
+  0% {
+opacity: 1;
+  }
+
+60%{
+opacity: 1;
+
+}
+
+  95% {
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 0;
+
+  }
+}
+
+
+.sun-wrapper {
+  border: 1px solid transparent;
+  width: 250px;
+  height:200px;
+  border-radius: 100%;
+  position: absolute;
+  top: 55px;
+  left: -16px;
+  transform: rotate(0deg);
+  animation: spin 6s linear infinite ;
+}
+
+@keyframes spin {
+  0%{
+    transform: rotate(0deg);
+  }
+  35%{
+    transform: rotate(30deg);
+  
+
+  }
+  70%{
+    transform: rotate(140deg);
+  
+  }
+
+  100%{
+    transform: rotate(140deg);
+
+  }
+  
+}
+.sun {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #F66D56;
+  position: absolute;
+  top: 15px;
+  left: 0;
+  
+}
+
+.pyramid{
+  height: 0;
+  width: 0;
+  border: 50px solid transparent;
+  border-bottom: 60px solid #E9E8E8;
+  position: relative;
+  position: absolute;
+  top: 20px;
+  left: 20%;
+  animation: backgroundreverse 6s infinite ;
+}
+
+.pyramid::after{
+  content: "";
+  height: 0;
+  width: 0;
+  border: 0 solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 60px solid rgb(189, 171, 171);
+  position: absolute;
+  top: 0px;
+  left: 18px;
+  transform: skewX(30deg);
+  animation: backgrounds 6s infinite ;
+
+}
+
+@keyframes backgroundreverse{
+
+  0% {
+    border-bottom: 60px solid #E9E8E8;
+  }
+
+  
+
+  95% {
+    border-bottom: 60px solid rgb(189, 171, 171);
+  }
+  
+  100% {
+    border-bottom: 60px solid rgb(189, 171, 171);
+  }
+
+  
+}
+@keyframes backgrounds {
+
+  0% {
+    border-bottom: 60px solid rgb(189, 171, 171);
+  }
+
+  95% {
+    border-bottom: 60px solid #E9E8E8;
+  }
+
+  100% {
+    border-bottom: 60px solid #E9E8E8;
+  }
+}
+.shadows{
+  height: 70px;
+  position: absolute;
+  bottom: 0px;
+  right: -39px;
+  background-color: rgb(106, 97, 97);
+  width: 200px;
+  z-index: 33;
+  animation: shadowmovement 6s linear infinite;
+} 
+
+@keyframes shadowmovement {
+  0%{
+    right: -39px;
+    clip-path: polygon(68% 0, 0 0, 100% 54%);
+  }
+
+  50% {
+    right: -39px;
+    clip-path: polygon(68% 0, 0 0, 40% 45%);
+
+  }
+
+  65%{
+    right: 3px;
+    clip-path: polygon(90% 2%, 22% 0, 0 29%);
+  }
+
+  80% {
+    background-color: grey;
+  }
+  100%{
+    right: 3px;
+    clip-path: polygon(90% 2%, 22% 0, 0 29%);
+    background-color: grey
+    
+  }
+}
+
+
+
+.ground {
+  background-color: #F0DE75;
+  width: 100%;
+  height: 70px;
+
+  position: absolute;
+  bottom: 0;
+}
+
+.square {
+  width: 50px;
+  height: 50px;
+  background-color: grey;
+}
+
+.shadow {
+  width: 0;
+  height: 0;
+  background-color: grey;
+  opacity: 0.7;
+  border: 70px solid transparent;
+  border-top: 0;
+  border-bottom: 100px solid red;
+}
+
